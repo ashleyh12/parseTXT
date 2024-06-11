@@ -7,11 +7,19 @@ url = "https://swift.gsfc.nasa.gov/archive/grb_table/tmp/grb_table_1718049017.tx
 ##sending a https get request to the url above
 response = requests.get(url)
 
-##extract the data and write the info to another file for a more organized 
+##extract the data and write the info to another file for a more organized view 
 with open("grb_table_data.txt", "wb") as f:
         f.write(response.content)
+
+##read the data from the new file created
+with open("grb_table_data.txt", "rb") as f:
+    for line in f: ##looping through the table (rows and columns)
+        line = line.strip() ##getting rid of the \n character 
+        columns = line.split()##columns
+        name = columns[1]
+        print(name)
+
+
+
 #find the data within the file (grb name including the day it was detected, the time it was detected, and XRT RA coordinates, and maybe redshift values)
 
-
-# with open('/Users/ashleyhaynes/Downloads/grb_table_1718041571.txt', 'r', encoding='latin-1') as f: ##opening the file and storing contents as 'f'
-#         f.decode('utf-8')
