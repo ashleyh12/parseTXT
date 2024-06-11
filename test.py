@@ -14,10 +14,10 @@ with open("grb_table_data.txt", "wb") as f:
 ##read the data from the new file created
 with open("grb_table_data.txt", "rb") as f:
     for line in f: ##looping through the table (rows and columns)
-        line = line.strip() ##getting rid of the \n character 
+        # line = line.strip() ##getting rid of the \n character 
         columns = line.split()##columns
-        name = columns[1]
-        print(name)
+        name = columns[0]
+        print("GRB Name: " + str(name))
 
 
 
