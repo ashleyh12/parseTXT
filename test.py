@@ -2,7 +2,7 @@
 import requests
 
 #url of the file
-url = "https://swift.gsfc.nasa.gov/archive/grb_table/tmp/grb_table_1718049017.txt"
+url = "https://swift.gsfc.nasa.gov/archive/grb_table/tmp/grb_table_1718196496.txt"
 
 ##sending a https get request to the url above
 response = requests.get(url)
@@ -18,9 +18,9 @@ with open("grb_table_data.txt", "r", encoding='latin-1') as f:
         grbName = columns[0]
         time = columns[1]
         xrtRA = columns[13]
-        redshiftVal = columns[30] ## check this later!!!
-        print("GRB Name: " + str(grbName) + " | " + " Time: " + str(time) + " | " + "Redshift: ")
- 
+        # redshiftVal = columns[30] ## check this later!!!
+        print("GRB Name: " + str(grbName) + " | " + " Time: " + str(time) + " | " + "XRT RA: " + str(xrtRA) + " | " + "Redshift: ")
+
 
 
 #find the data within the file (grb name including the day it was detected, the time it was detected, and XRT RA coordinates, and maybe redshift values)
